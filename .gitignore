@@ -1,0 +1,7 @@
+.DS_Store
+*.swp
+.idea/
+bce-api.log
+/cmd/nft-studio-backend/nft-studio
+implementContracts/
+implementContracts2/

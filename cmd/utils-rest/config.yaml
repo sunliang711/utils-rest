@@ -1,0 +1,59 @@
+server:
+  addr: :5080
+  # debug | release
+  gin_mode: debug
+  # valid time units are "ns","us","ms","s","m","h"
+  # monitor_interval: 10s
+
+upload:
+  max_size: 30000
+  endpoint: "ap-east-1"
+  s3_bucket: "file.atom8-tech.com"
+  default_path: token721
+
+log:
+  level: debug
+  # empty for stderr
+  logfile: ""
+  show_fulltime: true
+  report_caller: false
+
+
+jwt:
+  header_name: token
+  # key to sign jwt
+  key: SECRET_KEY
+  # expire duration, valid time units are "ns","us","ms","s","m","h"
+  exp: 2400h
+
+mysql:
+  enable: false
+  orm: false
+  # 是否开启日志
+  orm_logger: true
+  # <user>[:password]@tcp(address)/<Database>[?parseTime=true][&loc=Local]
+  # address format: host[:port] | /path/to/unix/socket/file
+  dsn: root:root@tcp(localhost)/nft_studio?charset=utf8mb4&parseTime=true&loc=Local
+  max_idle_conns: 10
+  max_open_conns: 100
+
+mongodb:
+  enable: false
+  url: mongodb://localhost:27017
+
+tls:
+  enable: false
+  cert_file: cert.pem
+  key_file: cert.key
+
+cors:
+  allow_origins:
+    - "*"
+  allow_methods:
+    - GET
+    - POST
+  allow_headers:
+    - '*'
+  # Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+  max_age: 24h
+
